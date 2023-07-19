@@ -1,4 +1,4 @@
-import { FileServer } from "./file_server.ts";
+import { FileServer } from "../mod.ts";
 
 FileServer({
     serve: {
