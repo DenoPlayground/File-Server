@@ -4,7 +4,7 @@ import { getMIMEType } from "./mime_types/get_mime_type.ts";
 import { pathDefaultFile } from "./files/path_default_file.ts";
 
 export default function fileServer(
-    options : {
+    options? : {
         serve? : Deno.ServeOptions | Deno.ServeTlsOptions,
         directory? : {
             rootDir? : string,
@@ -17,16 +17,16 @@ export default function fileServer(
             onListen: ({
                 hostname,
                 port
-            }) => console.log(`Files serving for ${options.directory?.rootDir || '.'} on http://${hostname}:${port}/`),
-            ...(options.serve || {}),
+            }) => console.log(`Files serving for ${options?.directory?.rootDir || '.'} on http://${hostname}:${port}/`),
+            ...(options?.serve || {}),
         }, (request) => {
         
         const requestURLPath = new URL(request.url).pathname;
 
         try {
             const path = pathDefaultFile(
-                `${options.directory?.rootDir || './html'}${requestURLPath}`,
-                options.directory?.defaultFileName || 'index.html'
+                `${options?.directory?.rootDir || './html'}${requestURLPath}`,
+                options?.directory?.defaultFileName || 'index.html'
             )
             
             return new Response(
