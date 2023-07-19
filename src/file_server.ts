@@ -3,7 +3,7 @@ import { getFileExtension } from "./get_file_extension.ts";
 import { getMIMEType } from "./get_mime_type.ts";
 import { pathDefaultFile } from "./path_default_file.ts";
 
-export function FileServer(
+export default function fileServer(
     options : {
         serve? : Deno.ServeOptions | Deno.ServeTlsOptions,
         directory? : {
