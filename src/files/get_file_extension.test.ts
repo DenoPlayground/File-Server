@@ -7,26 +7,26 @@ Deno.test(
         await test.step({
             name: 'html',
             fn: () => {
-                assertEquals(getFileExtension('path/to/file.html'), 'html')
+                assertEquals(getFileExtension('path/to/file.html'), 'html');
             }
-        })
+        });
         await test.step({
             name: 'css',
             fn: () => {
-                assertEquals(getFileExtension('path/to/file.css'), 'css')
+                assertEquals(getFileExtension('path/to/file.css'), 'css');
             }
-        })
+        });
         await test.step({
             name: 'js',
             fn: () => {
-                assertEquals(getFileExtension('path/to/file.js'), 'js')
+                assertEquals(getFileExtension('path/to/file.js'), 'js');
             }
-        })
+        });
         await test.step({
             name: 'txt',
             fn: () => {
-                assertEquals(getFileExtension('path/to/file.txt'), 'txt')
+                assertEquals(getFileExtension('path/to/file.txt'), 'txt');
             }
-        })
+        });
     }
 )
