@@ -9,24 +9,24 @@ Deno.test(
             fn: () => {
                 assertEquals(getMIMEType('html'), 'text/html');
             }
-        })
+        });
         await test.step({
             name: 'css',
             fn: () => {
                 assertEquals(getMIMEType('css'), 'text/css');
             }
-        })
+        });
         await test.step({
             name: 'js',
             fn: () => {
                 assertEquals(getMIMEType('js'), 'application/javascript');
             }
-        })
+        });
         await test.step({
             name: 'txt',
             fn: () => {
                 assertEquals(getMIMEType('txt'), 'text/plain');
             }
-        })
+        });
     }
 )
