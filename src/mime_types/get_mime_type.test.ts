@@ -2,7 +2,7 @@ import { assertEquals } from "https://deno.land/std@0.194.0/testing/asserts.ts";
 import { getMIMEType } from "./get_mime_type.ts";
 
 Deno.test(
-    'Get MIME type for specific file extension',
+    'Get MIME type for specific file extension.',
     async (test) => {
         await test.step({
             name: 'html',
