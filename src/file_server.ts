@@ -24,11 +24,13 @@ export function FileServer(
         const requestURLPath = new URL(request.url).pathname;
 
         try {
+            const path = pathDefaultFile(
+                `${options.directory?.rootDir || './html'}${requestURLPath}`,
+                options.directory?.defaultFileName || 'index.html'
+            )
+            
             return new Response(
-                Deno.readFileSync(pathDefaultFile(
-                    options.directory?.rootDir || './' + requestURLPath,
-                    options.directory?.defaultFileName || 'index.html'
-                )),
+                Deno.readFileSync(path),
                 {
                     headers: {
                         'Content-Type': getMIMEType(getFileExtension(requestURLPath))
