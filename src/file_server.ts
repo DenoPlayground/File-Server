@@ -14,11 +14,11 @@ export function FileServer(
 ) {
     Deno.serve(
         {
-            ...options.serve || {},
             onListen: ({
                 hostname,
                 port
-            }) => console.log(`Files serving for ${options.directory?.rootDir || '.'} on http://${hostname}:${port}/`)
+            }) => console.log(`Files serving for ${options.directory?.rootDir || '.'} on http://${hostname}:${port}/`),
+            ...(options.serve || {}),
         }, (request) => {
         
         const requestURLPath = new URL(request.url).pathname;
