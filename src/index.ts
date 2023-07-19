@@ -1,3 +1,10 @@
 import { FileServer } from "./file_server.ts";
 
-FileServer({ port: 80 }, './html', 'index.html');
+FileServer({
+    serve: {
+        port: 80
+    },
+    directory: {
+        rootDir: './html'
+    }
+});
