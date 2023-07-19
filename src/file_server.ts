@@ -4,19 +4,23 @@ import { getMIMEType } from "./get_mime_type.ts";
 import { pathDefaultFile } from "./path_default_file.ts";
 
 export function FileServer(
-    options : Deno.ServeOptions | Deno.ServeTlsOptions,
-    rootDir : string,
-    defaultFileName : string
+    options : {
+        serve? : Deno.ServeOptions | Deno.ServeTlsOptions,
+        directory? : {
+            rootDir? : string,
+            defaultFileName? : string
+        }
+    },
 ) {
-    Deno.serve(options, (request) => {
+    Deno.serve(options.serve || {}, (request) => {
         
         const requestURLPath = new URL(request.url).pathname;
-    
+
         try {
             return new Response(
                 Deno.readFileSync(pathDefaultFile(
-                    rootDir + requestURLPath,
-                    defaultFileName
+                    options.directory?.rootDir || './' + requestURLPath,
+                    options.directory?.defaultFileName || 'index.html'
                 )),
                 {
                     headers: {
