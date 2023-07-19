@@ -1,7 +1,7 @@
 
-import { getFileExtension } from "./get_file_extension.ts";
-import { getMIMEType } from "./get_mime_type.ts";
-import { pathDefaultFile } from "./path_default_file.ts";
+import { getFileExtension } from "./files/get_file_extension.ts";
+import { getMIMEType } from "./mime_types/get_mime_type.ts";
+import { pathDefaultFile } from "./files/path_default_file.ts";
 
 export default function fileServer(
     options : {
