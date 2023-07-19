@@ -28,5 +28,11 @@ Deno.test(
                 assertEquals(getMIMEType('txt'), 'text/plain');
             }
         });
+        await test.step({
+            name: 'doesNotExist',
+            fn: () => {
+                assertEquals(getMIMEType('doesNotExist'), 'text/plain');
+            }
+        });
     }
 )
