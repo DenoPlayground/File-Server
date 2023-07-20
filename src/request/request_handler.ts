@@ -6,11 +6,13 @@ import { getMIMEType } from "../mime_types/get_mime_type.ts";
 export function requestHandler(request : Request, directory? : DirectoryOptions) {
         
     const requestURLPath = new URL(request.url).pathname;
+    const rootDir = directory?.rootDir || './html';
+    const defaultFileName = directory?.defaultFileName || 'index.html';
 
     try {
         const path = pathDefaultFile(
-            `${directory?.rootDir || './html'}${requestURLPath}`,
-            directory?.defaultFileName || 'index.html'
+            `${rootDir}${requestURLPath}`,
+            defaultFileName
         )
         
         return new Response(
