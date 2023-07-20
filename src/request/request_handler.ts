@@ -17,7 +17,7 @@ export function requestHandler(request : Request, options? : FileServerOptions) 
             Deno.readFileSync(path),
             {
                 headers: {
-                    'Content-Type': getMIMEType(getFileExtension(requestURLPath))
+                    'Content-Type': getMIMEType(getFileExtension(path))
                 }
             }
         );
