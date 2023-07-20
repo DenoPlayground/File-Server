@@ -3,7 +3,7 @@ import { getFileExtension } from "../files/get_file_extension.ts";
 import { pathDefaultFile } from "../files/path_default_file.ts";
 import { getMIMEType } from "../mime_types/get_mime_type.ts";
 
-export function requestHandler(request : Request, options : FileServerOptions) {
+export function requestHandler(request : Request, options? : FileServerOptions) {
         
     const requestURLPath = new URL(request.url).pathname;
 
