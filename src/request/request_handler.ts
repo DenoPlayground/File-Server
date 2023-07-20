@@ -1,16 +1,16 @@
-import { FileServerOptions } from "../file_server_options.d.ts";
+import { DirectoryOptions } from "../directory_options.d.ts";
 import { getFileExtension } from "../files/get_file_extension.ts";
 import { pathDefaultFile } from "../files/path_default_file.ts";
 import { getMIMEType } from "../mime_types/get_mime_type.ts";
 
-export function requestHandler(request : Request, options? : FileServerOptions) {
+export function requestHandler(request : Request, directory? : DirectoryOptions) {
         
     const requestURLPath = new URL(request.url).pathname;
 
     try {
         const path = pathDefaultFile(
-            `${options?.directory?.rootDir || './html'}${requestURLPath}`,
-            options?.directory?.defaultFileName || 'index.html'
+            `${directory?.rootDir || './html'}${requestURLPath}`,
+            directory?.defaultFileName || 'index.html'
         )
         
         return new Response(

@@ -6,7 +6,7 @@ Deno.test(
     async (test) => {
 
         await test.step({
-            name: 'html',
+            name: 'Directory (no extension)',
             fn: () => {
                 const request = new Request('http://localhost:80/testdir')
 
@@ -18,7 +18,7 @@ Deno.test(
         });
 
         await test.step({
-            name: 'js',
+            name: 'Extension (js)',
             fn: () => {
                 const request = new Request('http://localhost:80/testdir/file.js')
 
@@ -29,7 +29,7 @@ Deno.test(
             }
         });
         await test.step({
-            name: 'unknownExtension',
+            name: 'Unknown extension',
             fn: () => {
                 const request = new Request('http://localhost:80/testdir/file.unknownExtension')
 

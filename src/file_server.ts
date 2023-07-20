@@ -1,20 +1,21 @@
 
-import { FileServerOptions } from "./file_server_options.d.ts";
+import { DirectoryOptions } from "./directory_options.d.ts";
 import { requestHandler } from "./request/request_handler.ts";
 
 export default function fileServer(
-    options? : FileServerOptions,
+    options? : Deno.ServeOptions | Deno.ServeTlsOptions,
+    directory? : DirectoryOptions
 ) {
     Deno.serve(
         {
             onListen: ({
                 hostname,
                 port
-            }) => console.log(`Files serving for ${options?.directory?.rootDir || '.'} on http://${hostname}:${port}/`),
-            ...(options?.serve || {}),
+            }) => console.log(`Files serving for ${directory?.rootDir || '.'} on http://${hostname}:${port}/`),
+            ...(options || {}),
         }, (request) => requestHandler(
             request,
-            options
+            directory
         )
     )
 }
