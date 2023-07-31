@@ -8,7 +8,7 @@ Deno.test(
         await test.step({
             name: 'Directory (no extension)',
             fn: () => {
-                const request = new Request('http://localhost:80/testdir')
+                const request = new Request('http://localhost:80/testdir');
 
                 assertEquals(
                     requestHandler(request).headers.get('Content-Type'),
@@ -20,7 +20,7 @@ Deno.test(
         await test.step({
             name: 'Extension (js)',
             fn: () => {
-                const request = new Request('http://localhost:80/testdir/file.js')
+                const request = new Request('http://localhost:80/testdir/file.js');
 
                 assertEquals(
                     requestHandler(request).headers.get('Content-Type'),
@@ -31,7 +31,7 @@ Deno.test(
         await test.step({
             name: 'Unknown extension',
             fn: () => {
-                const request = new Request('http://localhost:80/testdir/file.unknownExtension')
+                const request = new Request('http://localhost:80/testdir/file.unknownExtension');
 
                 assertEquals(
                     requestHandler(request).headers.get('Content-Type'),
