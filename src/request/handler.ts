@@ -4,6 +4,7 @@ import { getMIMEType } from "../mime_types/get_mime_type.ts";
 import { generateResponseWithContentType } from "../response/generate_response_with_content_type.ts";
 import { logRequest } from "../log/log_request.ts";
 import { logResponse } from "../log/log_response.ts";
+import { normalizePath } from "../files/normalize_path.ts";
 
 
 export function handler(
@@ -12,7 +13,7 @@ export function handler(
     defaultFileName : string,
     logging : boolean
 ) {
-        
+    const latencyStart = window.performance.now();
     const requestURL = new URL(request.url);
     const path = pathDefaultFile(
         `${rootDir}${requestURL.pathname}`,
@@ -23,10 +24,11 @@ export function handler(
     if (logging) {
         console.log(logRequest(
             requestURL.protocol.slice(0, -1),
-            requestURL.host,
+            new Date(),
+            requestURL.hostname,
+            requestURL.port,
             request.method,
-            requestURL.pathname,
-            fileExtension
+            requestURL.pathname
         ));
     }
 
@@ -36,8 +38,12 @@ export function handler(
         if (logging) {
             console.log(logResponse(
                 requestURL.protocol.slice(0, -1),
-                requestURL.host,
-                200
+                new Date(),
+                requestURL.hostname,
+                requestURL.port,
+                normalizePath(path),
+                200,
+                Math.round(window.performance.now() - latencyStart)
             ));
         }
     } catch (error) {
@@ -45,8 +51,12 @@ export function handler(
             if (logging) {
                 console.log(logResponse(
                     requestURL.protocol.slice(0, -1),
-                    requestURL.host,
-                    404
+                    new Date(),
+                    requestURL.hostname,
+                    requestURL.port,
+                    normalizePath(path),
+                    404,
+                    Math.round(window.performance.now() - latencyStart)
                 ));
             }
             fileContent = new TextEncoder().encode('404: Not found!')

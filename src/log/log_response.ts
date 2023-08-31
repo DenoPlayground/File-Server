@@ -1,11 +1,13 @@
+import { format } from "./format/index.ts";
+
 export function logResponse(
     protocol : string,
+    date : Date,
     host : string,
-    code : number
+    port : string,
+    path : string,
+    code : number,
+    latency : number
 ) {
-    const protocolColor = protocol == 'https' ? 4 : 240;
-    const returnColor = code == 200 ? 32 : 31;
-    const date = new Date().toLocaleString();
-
-    return `\x1b[48;5;${protocolColor}m\x1b[1m ${protocol.toUpperCase()} \x1b[0m ${date} \x1b[33m${host}\x1b[0m \x1b[${returnColor}mReturned ${code}\x1b[0m`
+    return `${format.protocol(protocol)} ${format.date(date)} ${format.host(host, port)} ${format.response(path, code, latency)}`
 }

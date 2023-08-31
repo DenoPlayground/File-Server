@@ -1,12 +1,12 @@
+import { format } from "./format/index.ts";
+
 export function logRequest(
     protocol : string,
+    date : Date,
     host : string,
+    port : string,
     method : string,
-    requestPath : string,
-    extension : string
+    path : string
 ) {
-    const protocolColor = protocol == 'https' ? 4 : 240;
-    const date = new Date().toLocaleString();
-
-    return `\x1b[48;5;${protocolColor}m\x1b[1m ${protocol.toUpperCase()} \x1b[0m ${date} \x1b[33m${host}\x1b[0m \x1b[36m${method.toUpperCase()} ${requestPath} (${extension})\x1b[0m`
+    return `${format.protocol(protocol)} ${format.date(date)} ${format.host(host, port)} ${format.request(method, path)}`
 }
