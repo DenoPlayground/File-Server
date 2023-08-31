@@ -1,4 +1,4 @@
-export function generateReponseWithContentType(fileContent : Uint8Array | string, contentType : string) {
+export function generateResponseWithContentType(fileContent : Uint8Array | string, contentType : string) {
     return new Response(
         fileContent,
         {
