@@ -1,60 +1,122 @@
 {
     "default": "text/plain",
     "types": {
-        "ppt": "application/vnd.ms-powerpoint",
-        "pptx": "application/vnd.openxmlformats-officedocument.presentationml.presentation",
-        "rar": "application/vnd.rar",
-
-        "application/javascript": ["js", "mjs"],
-        "application/typescript": ["ts", "mts"],
-        "application/wasm": ["wasm"],
-        "application/json": ["json", "map"],
-        "application/jsonc": ["jsonc"],
-        "application/json5": ["json5"],
-        "application/ld+json": ["jsonld"],
-        "application/pdf": ["pdf"],
-        "application/xml": ["xml", "plist", "tmLanguage", "tmTheme"],
-        "application/zip": ["zip"],
-        "application/gzip": ["gz"],
-        "application/tar": ["tar"],
-        "application/tar+gzip": ["tar.gz", "tgz"],
-        "application/x-7z-compressed": ["7z"],
-        "application/vnd.mozilla.xul+xml": ["xul"],
-        "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet": ["xlsx"],
-        "application/vnd.ms-excel": ["xls"],
-        "application/xhtml+xml": ["xhtml"],
-        "application/vnd.visio": ["vsd"],
-        "application/x-sh": "sh",
-        "application/x-abiword": ["abw"],
-        "application/x-freearc": ["arc"],
-        "application/vnd.amazon.ebook": ["azw"],
-        "application/octet-stream": ["bin"],
-        "application/x-bzip": ["bz"],
-        "application/x-bzip2": ["bz2"],
-        "application/x-cdf": ["cda"],
-        "application/x-csh": ["csh"],
-        "application/msword": ["doc"],
-        "application/vnd.openxmlformats-officedocument.wordprocessingml.document": ["docx"],
-        "application/vnd.ms-fontobject": ["eot"],
-        "application/java-archive": ["jar"],
-        "application/epub+zip": ["epub"],
-        "application/vnd.apple.installer+xml": ["mpkg"],
-        "application/vnd.oasis.opendocument.presentation": ["odp"],
-        "application/vnd.oasis.opendocument.spreadsheet": ["ods"],
-        "application/vnd.oasis.opendocument.text": ["odt"],
-        "application/ogg": ["ogx"],
-        "application/x-httpd-php": ["php"],
-        "application/rtf": ["rtf"],
+        "application/epub+zip": [ "epub" ],
+        "application/gzip": [ "gz" ],
+        "application/java-archive": [ "jar" ],
+        "application/javascript": [
+            "js",
+            "mjs"
+        ],
+        "application/json": [
+            "json",
+            "map"
+        ],
+        "application/json5": [ "json5" ],
+        "application/jsonc": [ "jsonc" ],
+        "application/ld+json": [ "jsonld" ],
+        "application/msword": [ "doc" ],
+        "application/octet-stream": [ "bin" ],
+        "application/ogg": [ "ogx" ],
+        "application/pdf": [ "pdf" ],
+        "application/rtf": [ "rtf" ],
+        "application/tar": [ "tar" ],
+        "application/tar+gzip": [
+            "tar.gz",
+            "tgz"
+        ],
+        "application/typescript": [
+            "ts",
+            "mts"
+        ],
+        "application/vnd.amazon.ebook": [ "azw" ],
+        "application/vnd.apple.installer+xml": [ "mpkg" ],
+        "application/vnd.mozilla.xul+xml": [ "xul" ],
+        "application/vnd.ms-excel": [ "xls" ],
+        "application/vnd.ms-fontobject": [ "eot" ],
+        "application/vnd.ms-powerpoint": [ "ppt" ],
+        "application/vnd.oasis.opendocument.presentation": [ "odp" ],
+        "application/vnd.oasis.opendocument.spreadsheet": [ "ods" ],
+        "application/vnd.oasis.opendocument.text": [ "odt" ],
+        "application/vnd.openxmlformats-officedocument.presentationml.presentation": [ "pptx" ],
+        "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet": [ "xlsx" ],
+        "application/vnd.openxmlformats-officedocument.wordprocessingml.document": [ "docx" ],
+        "application/vnd.rar": [ "rar" ],
+        "application/vnd.visio": [ "vsd" ],
+        "application/wasm": [ "wasm" ],
+        "application/x-7z-compressed": [ "7z" ],
+        "application/x-abiword": [ "abw" ],
+        "application/x-bzip": [ "bz" ],
+        "application/x-bzip2": [ "bz2" ],
+        "application/x-cdf": [ "cda" ],
+        "application/x-csh": [ "csh" ],
+        "application/x-freearc": [ "arc" ],
+        "application/x-httpd-php": [ "php" ],
+        "application/x-sh": [ "sh" ],
+        "application/xhtml+xml": [ "xhtml" ],
+        "application/xml": [
+            "xml",
+            "plist",
+            "tmLanguage",
+            "tmTheme"
+        ],
+        "application/zip": [ "zip" ],
         
-        "text/calendar": ["ics"],
-        "text/html": ["html", "htm"],
-        "text/markdown": ["md", "markdown"],
-        "text/mdx": ["mdx"],
-        "text/jsx": ["jsx"],
-        "text/tsx": ["tsx"],
-        "text/css": ["css"],
-        "text/csv": ["csv"],
-        "text/yaml": ["yaml", "yml"],
+        "audio/aac": [ "aac" ],
+        "audio/midi": [ "mid" ],
+        "audio/mp4": [ "m4a" ],
+        "audio/mpeg": [
+            "mp3",
+            "m3a"
+        ],
+        "audio/ogg": [
+            "ogg",
+            "oga"
+        ],
+        "audio/opus": [ "opus" ],
+        "audio/wav": [ "wav" ],
+        "audio/webm": [ "weba" ],
+        "audio/x-midi": [ "midi" ],
+
+        "font/collection": [ "ttc" ],
+        "font/otf": [ "otf" ],
+        "font/ttf": [ "ttf" ],
+        "font/woff": [ "woff" ],
+        "font/woff2": [ "woff2" ],
+
+        "image/apng": [ "apng" ],
+        "image/avif": [ "avif" ],
+        "image/bmp": [ "bmp" ],
+        "image/gif": [ "gif" ],
+        "image/jpeg": [
+            "jpg",
+            "jpeg"
+        ],
+        "image/png": [ "png" ],
+        "image/svg+xml": [
+            "svg",
+            "svgz"
+        ],
+        "image/tiff": [
+            "tiff",
+            "tif"
+        ],
+        "image/webp": [ "webp" ],
+        "image/x-icon": [ "ico" ],
+
+        "text/calendar": [ "ics" ],
+        "text/css": [ "css" ],
+        "text/csv": [ "csv" ],
+        "text/html": [
+            "html",
+            "htm"
+        ],
+        "text/jsx": [ "jsx" ],
+        "text/markdown": [
+            "md",
+            "markdown"
+        ],
+        "text/mdx": [ "mdx" ],
         "text/plain": [
             "txt",
             "glsl",
@@ -65,44 +127,25 @@
             "stylus",
             "styl"
         ],
+        "text/tsx": [ "tsx" ],
+        "text/yaml": [
+            "yaml",
+            "yml"
+        ],
 
-        "font/ttf": ["ttf"],
-        "font/otf": ["otf"],
-        "font/woff": ["woff"],
-        "font/woff2": ["woff2"],
-        "font/collection": ["ttc"],
+        "video/3gpp": [ "3gp" ],
+        "video/3gpp2": [ "3g2" ],
+        "video/mp4": [
+            "mp4",
+            "m4v"
+        ],
+        "video/mpeg": [ "mpeg" ],
+        "video/ogg": [ "ogv" ],
+        "video/webm": [ "webm" ],
+        "video/x-matroska": [ "mkv" ],
+        "video/x-msvideo": [ "avi" ],
 
-        "image/jpeg": ["jpg", "jpeg"],
-        "image/png": ["png"],
-        "image/apng": ["apng"],
-        "image/gif": ["gif"],
-        "image/webp": ["webp"],
-        "image/avif": ["avif"],
-        "image/svg+xml": ["svg", "svgz"],
-        "image/x-icon": ["ico"],
-        "image/tiff": ["tiff", "tif"],
-        "image/bmp": ["bmp"],
-
-        "audio/mp4": ["m4a"],
-        "audio/mpeg": ["mp3", "m3a"],
-        "audio/ogg": ["ogg", "oga"],
-        "audio/wav": ["wav"],
-        "audio/webm": ["weba"],
-        "audio/aac": ["aac"],
-        "audio/midi": ["mid"],
-        "audio/x-midi": ["midi"],
-        "audio/opus": ["opus"],
-
-        "video/mp4": ["mp4", "m4v"],
-        "video/ogg": ["ogv"],
-        "video/webm": ["webm"],
-        "video/x-matroska": ["mkv"],
-        "video/3gpp2": ["3g2"],
-        "video/3gpp": ["3gp"],
-        "video/x-msvideo": ["avi"],
-        "video/mpeg": ["mpeg"],
-
-        "x-shader/x-fragment": ["frag"],
-        "x-shader/x-vertex": ["vert"]
+        "x-shader/x-fragment": [ "frag" ],
+        "x-shader/x-vertex": [ "vert" ]
     }
 }
