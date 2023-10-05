@@ -4,7 +4,6 @@
         "ppt": "application/vnd.ms-powerpoint",
         "pptx": "application/vnd.openxmlformats-officedocument.presentationml.presentation",
         "rar": "application/vnd.rar",
-        "rtf": "application/rtf",
 
         "application/javascript": ["js", "mjs"],
         "application/typescript": ["ts", "mts"],
@@ -45,6 +44,7 @@
         "application/vnd.oasis.opendocument.text": ["odt"],
         "application/ogg": ["ogx"],
         "application/x-httpd-php": ["php"],
+        "application/rtf": ["rtf"],
         
         "text/calendar": ["ics"],
         "text/html": ["html", "htm"],
