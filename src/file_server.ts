@@ -24,3 +24,19 @@ export default function fileServer(
         )
     )
 }
+
+export class FileServer {
+    constructor(
+        serve : (
+            options: Deno.ServeOptions | Deno.ServeTlsOptions,
+            handler: Deno.ServeHandler
+        ) => Deno.Server,
+        options? : Options
+    ) {
+        serve
+    }
+
+    serve() : Promise<void> {
+
+    }
+}
