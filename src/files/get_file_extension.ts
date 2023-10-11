@@ -4,5 +4,5 @@
  * @returns The file extension
  */
 export function getFileExtension(path : string) : string {
-    return path.replace(/^.*\.([^.]*)$/, (_, extension) => extension);
+    return path.replace(/^.*?((?:\.\w+)+)$/, (_, extension) => extension);
 }
