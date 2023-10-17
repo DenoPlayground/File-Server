@@ -10,7 +10,7 @@
  * @returns The new path with the default file
  */
 export function pathDefaultFile(path : string, defaultFile : string) : string {
-    const regExMatchValidPath = /(.+(?<!\.[^/]+)$)/
+    const regExMatchValidPath = /(.*?)\/?(?<!.+\.[^/]+)$/
     return path.replace(
         regExMatchValidPath,
         (
