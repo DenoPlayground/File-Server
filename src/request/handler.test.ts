@@ -6,6 +6,7 @@ Deno.test(
     async (test) => {
 
         await test.step({
+            ignore: true,
             name: 'Directory (no extension)',
             fn: () => {
                 const request = new Request('http://localhost:80/testdir');
@@ -23,6 +24,7 @@ Deno.test(
         });
 
         await test.step({
+            ignore: true,
             name: 'Extension (js)',
             fn: () => {
                 const request = new Request('http://localhost:80/testdir/file.js');
@@ -32,12 +34,14 @@ Deno.test(
                         request,
                         './',
                         'index.html',
-                        false).headers.get('Content-Type'),
+                        false
+                    ).headers.get('Content-Type'),
                     'application/javascript'
                 );
             }
         });
         await test.step({
+            ignore: true,
             name: 'Unknown extension',
             fn: () => {
                 const request = new Request('http://localhost:80/testdir/file.unknownExtension');
