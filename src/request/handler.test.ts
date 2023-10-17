@@ -11,7 +11,12 @@ Deno.test(
                 const request = new Request('http://localhost:80/testdir');
 
                 assertEquals(
-                    handler(request).headers.get('Content-Type'),
+                    handler(
+                        request,
+                        './',
+                        'index.html',
+                        false
+                    ).headers.get('Content-Type'),
                     'text/html'
                 );
             }
@@ -23,7 +28,11 @@ Deno.test(
                 const request = new Request('http://localhost:80/testdir/file.js');
 
                 assertEquals(
-                    requestHandler(request).headers.get('Content-Type'),
+                    handler(
+                        request,
+                        './',
+                        'index.html',
+                        false).headers.get('Content-Type'),
                     'application/javascript'
                 );
             }
@@ -34,7 +43,12 @@ Deno.test(
                 const request = new Request('http://localhost:80/testdir/file.unknownExtension');
 
                 assertEquals(
-                    requestHandler(request).headers.get('Content-Type'),
+                    handler(
+                        request,
+                        './',
+                        'index.html',
+                        false
+                    ).headers.get('Content-Type'),
                     'text/plain'
                 );
             }
