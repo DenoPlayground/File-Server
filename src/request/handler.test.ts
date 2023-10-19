@@ -4,7 +4,6 @@ import { handler } from "./handler.ts";
 Deno.test(
     'Request specific files and test for correct "Content-Type".',
     async (test) => {
-
         await test.step({
             ignore: true,
             name: 'Directory (no extension)',
@@ -22,7 +21,6 @@ Deno.test(
                 );
             }
         });
-
         await test.step({
             ignore: true,
             name: 'Extension (js)',
