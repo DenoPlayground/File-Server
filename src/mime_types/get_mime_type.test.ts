@@ -4,34 +4,59 @@ import { getMIMEType } from "./get_mime_type.ts";
 Deno.test(
     'Get MIME type for specific file extension.',
     async (test) => {
+        const defaultMIMETypes = {
+            default: 'text/html',
+            types: {
+                'text/html': [
+                    'html'
+                ],
+                'application/javascript': [
+                    "js",
+                    "mjs"
+                ]
+            }
+        }
+
         await test.step({
-            name: 'html',
+            name: 'Get simple entry (html)',
             fn: () => {
-                assertEquals(getMIMEType('html'), 'text/html');
+                assertEquals(
+                    getMIMEType(
+                        defaultMIMETypes,
+                        'html'
+                    ), 'text/html'
+                );
             }
         });
         await test.step({
-            name: 'css',
+            name: 'Get entry in array (js/mjs)',
             fn: () => {
-                assertEquals(getMIMEType('css'), 'text/css');
+                assertEquals(
+                    getMIMEType(
+                        defaultMIMETypes,
+                        'js'
+                    ),
+                    'application/javascript'
+                );
+                assertEquals(
+                    getMIMEType(
+                        defaultMIMETypes,
+                        'jsm'
+                    ),
+                    'application/javascript'
+                );
             }
         });
         await test.step({
-            name: 'js',
+            name: 'Get default entry, if extension does not exist.',
             fn: () => {
-                assertEquals(getMIMEType('js'), 'application/javascript');
-            }
-        });
-        await test.step({
-            name: 'txt',
-            fn: () => {
-                assertEquals(getMIMEType('txt'), 'text/plain');
-            }
-        });
-        await test.step({
-            name: 'doesNotExist',
-            fn: () => {
-                assertEquals(getMIMEType('doesNotExist'), 'text/plain');
+                assertEquals(
+                    getMIMEType(
+                        defaultMIMETypes,
+                        'doesNotExist'
+                    ),
+                    'text/plain'
+                );
             }
         });
     }
