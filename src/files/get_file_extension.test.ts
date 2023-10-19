@@ -16,5 +16,11 @@ Deno.test(
                 assertEquals(getFileExtension('path/to/file.tar.gz'), 'gz');
             }
         });
+        await test.step({
+            name: 'tar.gz (gz)',
+            fn: () => {
+                assertEquals(getFileExtension('pa-th/t.o/file/wi.th/char$acte4rs.gz'), 'gz');
+            }
+        });
     }
 )
