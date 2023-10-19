@@ -21,10 +21,7 @@
         "application/pdf": [ "pdf" ],
         "application/rtf": [ "rtf" ],
         "application/tar": [ "tar" ],
-        "application/tar+gzip": [
-            "tar.gz",
-            "tgz"
-        ],
+        "application/tar+gzip": [ "tgz" ],
         "application/typescript": [
             "ts",
             "mts"
