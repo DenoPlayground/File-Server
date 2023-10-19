@@ -5,7 +5,7 @@ Deno.test(
     'Get MIME type for specific file extension.',
     async (test) => {
         const defaultMIMETypes = {
-            default: 'text/html',
+            default: 'text/plain',
             types: {
                 'text/html': [
                     'html'

@@ -5,21 +5,39 @@ Deno.test(
     'Get the file extension from a specific path.',
     async (test) => {
         await test.step({
-            name: 'txt',
+            name: 'Simple path with extension: txt',
             fn: () => {
-                assertEquals(getFileExtension('path/to/file.txt'), 'txt');
+                assertEquals(
+                    getFileExtension('path/to/file.txt'),
+                    'txt'
+                );
             }
         });
         await test.step({
-            name: 'tar.gz (gz)',
+            name: 'Simple path with extension: tar.gz (gz)',
             fn: () => {
-                assertEquals(getFileExtension('path/to/file.tar.gz'), 'gz');
+                assertEquals(
+                    getFileExtension('path/to/file.tar.gz'),
+                    'gz'
+                );
             }
         });
         await test.step({
-            name: 'tar.gz (gz)',
+            name: 'Complex path with special characters and extension: tar.gz (gz)',
             fn: () => {
-                assertEquals(getFileExtension('pa-th/t.o/file/wi.th/char$acte4rs.gz'), 'gz');
+                assertEquals(
+                    getFileExtension('pa-th/t.o/file/wi.th/char$acte4rs.gz'),
+                    'gz'
+                );
+            }
+        });
+        await test.step({
+            name: 'Path without file extension.',
+            fn: () => {
+                assertEquals(
+                    getFileExtension('path/without/file/'),
+                    undefined
+                );
             }
         });
     }
