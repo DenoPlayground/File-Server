@@ -1,4 +1,4 @@
-import { MIMETypesObject } from "./mime_type_object.d.ts";
+import { MIMETypesObject } from "./mime_types_object.d.ts";
 
 /**
  * This function returns the correct MIME type based on the file extension. If the extension does not exist on the MIME
