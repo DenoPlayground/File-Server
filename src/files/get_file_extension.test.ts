@@ -35,8 +35,17 @@ Deno.test(
             name: 'Path without file extension.',
             fn: () => {
                 assertEquals(
+                    getFileExtension('path/without/file'),
+                    null
+                );
+            }
+        });
+        await test.step({
+            name: 'Path without file extension, but trailing slash (/).',
+            fn: () => {
+                assertEquals(
                     getFileExtension('path/without/file/'),
-                    undefined
+                    null
                 );
             }
         });
