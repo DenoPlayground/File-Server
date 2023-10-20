@@ -24,7 +24,8 @@ Deno.test(
                     getMIMEType(
                         defaultMIMETypes,
                         'html'
-                    ), 'text/html'
+                    ),
+                    'text/html'
                 );
             }
         });
@@ -41,7 +42,7 @@ Deno.test(
                 assertEquals(
                     getMIMEType(
                         defaultMIMETypes,
-                        'jsm'
+                        'mjs'
                     ),
                     'application/javascript'
                 );
