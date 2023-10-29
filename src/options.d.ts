@@ -1,6 +1,6 @@
 export interface Options {
-    serve? : Deno.ServeOptions | Deno.ServeTlsOptions,
-    rootDir? : string,
-    defaultFileName? : string,
-    logging? : boolean
+    /** Root directory */
+    root? : string,
+    /** Ignore files/patterns */
+    ignore? : (string | RegExp)[]
 }
