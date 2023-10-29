@@ -1,3 +1,3 @@
-import fileServer from './src/file_server.ts'
+import files from './src/files.ts'
 
-export { fileServer as FileServer }
+export { files }
